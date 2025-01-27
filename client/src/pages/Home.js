@@ -13,6 +13,12 @@ const Home = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
+  const loggedIn = localStorage.getItem('token')
+
+  if(!loggedIn){
+    navigate("/email")
+  }
+
   console.log('user',user)
   const fetchUserDetails = async()=>{
     try {
