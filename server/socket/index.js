@@ -1,6 +1,5 @@
 const express = require('express')
 const { Server } = require('socket.io')
-const cors = require('cors')
 const http  = require('http')
 const getUserDetailsFromToken = require('../helpers/getUserDetailsFromToken')
 const UserModel = require('../models/UserModel')
@@ -8,8 +7,6 @@ const { ConversationModel,MessageModel } = require('../models/ConversationModel'
 const getConversation = require('../helpers/getConversation')
 
 const app = express()
-
-app.use(cors())
 
 /***socket connection */
 const server = http.createServer(app)
